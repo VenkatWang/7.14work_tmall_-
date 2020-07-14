@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: #ccc;
+        }
+
+        .box {
+            width: 482px;
+            height: 292px;
+            background-color: #fff;
+            margin: 0 auto;
+            padding-top: 10px;
+            cursor: pointer;
+           
+        }
+
+        .product_display {
+            width: 462px;
+            height: 282px;
+            margin: 0 10px 10px;
+            box-shadow: 0 2px 8px 0 rgba(0, 0, 0, .09);
+        }
+
+        .head {
+            width: 462px;
+            height: 57px;
+            background-color: #f1f1f1;
+        }
+
+        .head_title{
+            width: 191px;
+            height: 57px;
+            padding: 0 20px;
+            float: left;
+            text-align: center;
+            line-height: 57px;
+        }
+
+        /* .head_1 {
+            background-color: #00B262;
+        } */
+
+        .a_1 {
+            text-decoration: none;
+            font-family: "Microsoft YaHei";
+            color: black;
+            font-size: 18px;
+        }
+
+        /* .a_1 {
+            color: #fff;
+        } */
+        .content{
+            width: 462px;
+            height: 225px;
+            overflow:hidden;
+        }
+        .content_1,
+        .content_2 {
+            width: 100%;
+            height: 100%;
+            position: relative;
+
+        }
+
+        .content_1_left,.content_2_left {
+            width: 291px;
+            height: 87px;
+            position: absolute;
+            top: 96px;
+            background-image: url(./imgs/tag_background.png);
+            background-position: 0 center;
+            background-repeat: no-repeat;
+            background-color: rgba(0, 0, 0, 0);
+            z-index: 99;
+        }
+
+        .content_1_left_top,.content_2_left_top {
+            margin-top: 8px;
+            margin-left: 26px;
+            width: 265px;
+            height: 36px;
+            line-height: 36px;
+            font-size: 24px;
+            color: #00B262;
+            font-weight: bold;
+            letter-spacing: 2px;
+
+
+        }
+
+
+        .span1 {
+            margin-left: 8px;
+        }
+        .content_1_left_bottom,.content_2_left_bottom{
+            margin-left: 26px;
+            font-size: 20px;
+        }
+        .content_1_right,.content_2_right{
+            margin-top: 10px;
+            margin-right:30px;
+            width: 200px;
+            height: 200px;
+            float: right;
+        }
+        .content_1_right img{
+            width: 100%;
+            height: 100%;
+        }
+        .content_2_right img{
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="product_display">
+            <div class="head">
+                <div class="head_title" style="background-color: #00B262;">
+                    <a class="a_1" href="javascript:;" style=" color: #fff;">今日疯抢</a>
+                </div>
+                <div class="head_title">
+                    <a class="a_1" href="javascript:;">量贩装</a>
+                </div>
+            </div>
+            <div class="content">
+                <div class="content_1">
+                    <div class="content_1_left">
+                        <div class="content_1_left_content">
+                            <div class="content_1_left_top">
+                                <img src="./imgs/tag.png" class="icon">
+                                <span class="span1">零食欢乐购</span>
+                            </div>
+                            <div class="content_1_left_bottom">
+                                <span class="span2">爆款直降</span>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="content_1_right">
+                        <img src="./imgs/每日坚果.jpg">
+                    </div>
+
+                </div>
+                <div class="content_2">
+                    <div class="content_2_left">
+                        <div class="content_2_left_content">
+                            <div class="content_2_left_top">
+                                <img src="./imgs/tag.png" class="icon">
+                                <span class="span1">爆款直降</span>
+                            </div>
+                            <div class="content_2_left_bottom">
+                                <span class="span2">粮油调味</span>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="content_2_right">
+                        <img src="./imgs/葵花籽油.jpg">
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        var links=document.querySelectorAll(".head div");
+        var links_font=document.querySelectorAll(".head a")
+        var lists=document.querySelectorAll(".content>div");
+        for(let i=0;i<links.length;i++){
+            links[i].onclick=function(){
+                for(var j=0;j<lists.length;j++){
+                    lists[j].style.display="none";
+                    links[j].style.background="none";
+                    links_font[j].style.color="black";
+                }
+                lists[i].style.display="block";
+                this.style.background="#00B262";
+                links_font[i].style.color="#fff";
+            }
+        }
+        setInterval(function(){
+            for(let i=0;i<links.length;i++){
+                for(var j=0;j<lists.length;j++){
+                    lists[j].style.display="none";
+                    links[j].style.background="none";
+                    links_font[j].style.color="black";
+                }
+                lists[i].style.display="block";
+                this.style.background="#00B262";
+                links_font[i].style.color="#fff";
+            }
+        },500)
+    </script>
+
+</body>
+
+</html>
